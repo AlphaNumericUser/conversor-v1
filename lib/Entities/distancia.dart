@@ -1,18 +1,11 @@
-
-List<Distancia> distancias = [
-  Distancia(nombre: 'm', ratio: 1),
-  Distancia(nombre: 'cm', ratio: 100),
-  Distancia(nombre: 'mm', ratio: 1000),
-  Distancia(nombre: 'km', ratio: 0.001),
-];
-
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class Distancia {
   String nombre;
   double ratio; // Factor de conversión con respecto a una unidad base
 
   Distancia({
-    required this.nombre,
-    required this.ratio,
+    this.nombre = 'm',
+    this.ratio = 1,
   });
 
   static double convertir(double valor, Distancia distanciaEntrada, Distancia distanciaSalida) {
@@ -24,4 +17,5 @@ class Distancia {
   
     return valorConvertido;
   }
+
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Example2 extends StatefulWidget {
-  const Example2({super.key});
+class ExampleScreen2 extends StatefulWidget {
+  const ExampleScreen2({super.key});
 
   @override
-  State<Example2> createState() => _Example2State();
+  State<ExampleScreen2> createState() => _ExampleScreen2State();
 }
 
-class _Example2State extends State<Example2> {
+class _ExampleScreen2State extends State<ExampleScreen2> {
 
   List<String> lista = ['jose', 'alfredo', 'diaz'];
   String? selectedName;

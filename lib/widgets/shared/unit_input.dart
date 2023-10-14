@@ -1,45 +1,65 @@
+import 'package:conversor/Entities/distancia.dart';
+import 'package:conversor/providers/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class UnitInput extends StatelessWidget {
+class UnitInput extends ConsumerWidget {
   const UnitInput({
-    super.key,
+    Key? key,
     required this.boxWidth,
     required this.boxHeight,
-    required this.lista, required this.fontSize,
-  });
+    required this.lista,
+    required this.fontSize,
+  }) : super(key: key);
 
   final double boxWidth;
   final double boxHeight;
-  final List<String> lista;
+  final List<Distancia> lista;
   final double fontSize;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final textController = ref.watch(controllerProviderProvider);
+
+    void handleInputChange(String value) {
+      if (value.isNotEmpty) {
+        try {
+          double valorNumerico = double.parse(value);
+          ref.read(valorNumericoProvider.notifier).cambiarValor(valorNumerico);
+        // ignore: empty_catches
+        } catch (e) {
+        }
+      } else {
+      }
+    }
+
     return Center(
-      child: Container(
+      child: SizedBox(
         width: boxWidth,
         height: boxHeight,
-        // color: Colors.red.shade100,
         child: Row(
           children: [
             SizedBox(
-              width: boxWidth/3,
+              width: boxWidth / 3,
               height: boxHeight,
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: DropdownButtonFormField(
                     decoration: const InputDecoration(
-                      hintText: 'From', // hintText centrado verticalmente
+                      hintText: 'From', 
                     ),
                     items: lista.map((unidad) {
                       return DropdownMenuItem(
                         value: unidad,
-                        child: Text(unidad, style: const TextStyle(fontSize: 20),),
+                        child: Text(unidad.nombre, style: const TextStyle(fontSize: 20)),
                       );
-                    }).toList(), 
+                    }).toList(),
                     onChanged: (value) {
-                      
+                      if (value != null) {
+                        ref.read(distanciaEntradaProvider.notifier).actualizarValor(value);
+                      }
                     },
                   ),
                 ),
@@ -48,25 +68,29 @@ class UnitInput extends StatelessWidget {
             Expanded(
               child: Container(
                 height: boxHeight,
-                // color: Colors.blue,
-                alignment: Alignment.bottomRight, // Alinea el TextField en la esquina inferior derecha
+                alignment: Alignment.bottomRight,
                 child: Center(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(),
                     child: TextField(
+                      onChanged: handleInputChange,
+                      controller: textController,
                       textAlign: TextAlign.right,
                       style: TextStyle(fontSize: fontSize),
                       keyboardType: TextInputType.number,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,4}')),
+                      ],
                       decoration: const InputDecoration(
-                        hintText: 'Push here', // Texto de ejemplo dentro del TextField
+                        hintText: 'Push here',
                         hintStyle: TextStyle(fontSize: 20),
-                        alignLabelWithHint: true, // Alinea la etiqueta con el texto de ejemplo
-                        contentPadding: EdgeInsets.all(10.0), // Relleno interno del TextField
-                        enabledBorder: OutlineInputBorder( // Borde sin línea inferior
-                          borderSide: BorderSide(color: Colors.transparent), // Color transparente
+                        alignLabelWithHint: true,
+                        contentPadding: EdgeInsets.all(10.0),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.transparent),
                         ),
-                        focusedBorder: OutlineInputBorder( // Borde cuando el TextField está enfocado
-                          borderSide: BorderSide(color: Colors.transparent), // Color transparente
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.transparent),
                         ),
                       ),
                     ),
@@ -80,4 +104,3 @@ class UnitInput extends StatelessWidget {
     );
   }
 }
-

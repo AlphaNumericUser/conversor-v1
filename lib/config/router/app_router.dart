@@ -37,7 +37,7 @@ final router = GoRouter(
 
     GoRoute(
       path: '/example2',
-      builder: (context, state) => const Example2(),
+      builder: (context, state) => const ExampleScreen2(),
     ),
 
   ]

@@ -1,30 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class UnitOutput extends StatelessWidget {
+import '../../Entities/distancia.dart';
+import '../../providers/distancia_provider.dart';
+
+class UnitOutput extends ConsumerWidget {
   const UnitOutput({
-    super.key,
+    Key? key,
     required this.boxWidth,
     required this.boxHeight,
-    required this.lista, 
+    required this.lista,
     required this.fontSize,
-  });
+  }) : super(key: key);
 
   final double boxWidth;
   final double boxHeight;
-  final List<String> lista;
+  final List<Distancia> lista;
   final double fontSize;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final valorOutput = ref.watch(valorOutputProvider);
+
     return Center(
-      child: Container(
+      child: SizedBox(
         width: boxWidth,
         height: boxHeight,
-        // color: Colors.red.shade100,
         child: Row(
           children: [
             SizedBox(
-              width: boxWidth/3,
+              width: boxWidth / 3,
               height: boxHeight,
               child: Center(
                 child: Padding(
@@ -36,11 +41,14 @@ class UnitOutput extends StatelessWidget {
                     items: lista.map((unidad) {
                       return DropdownMenuItem(
                         value: unidad,
-                        child: Text(unidad, style: const TextStyle(fontSize: 20),),
+                        child: Text(
+                          unidad.nombre,
+                          style: const TextStyle(fontSize: 20),
+                        ),
                       );
-                    }).toList(), 
+                    }).toList(),
                     onChanged: (value) {
-                      
+                      ref.read(distanciaSalidaProvider.notifier).actualizarValor(value!);
                     },
                   ),
                 ),
@@ -49,14 +57,13 @@ class UnitOutput extends StatelessWidget {
             Expanded(
               child: Container(
                 height: boxHeight,
-                // color: Colors.blue,
                 alignment: Alignment.centerRight, // Alinea el contenido en el centro derecho
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
-                    '10', 
+                    '${valorOutput % 1 == 0 ? valorOutput.toInt() : valorOutput}',
                     style: TextStyle(fontSize: fontSize),
-                  )
+                  ),
                 ),
               ),
             ),
