@@ -100,7 +100,7 @@ class UnitInput extends ConsumerWidget {
                         NumberTextInputFormatter(
                           integerDigits: 10,
                           decimalDigits: 2,
-                          maxValue: '1000000000.00',
+                          maxValue: '1000000.00',
                           decimalSeparator: '.',
                           groupDigits: 3,
                           groupSeparator: ',',
