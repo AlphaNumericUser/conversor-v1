@@ -6,7 +6,7 @@ part of 'distancia_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$distanciaProviderHash() => r'ca5ead23359234332ef886703ce50a4b67f9ac93';
+String _$distanciaProviderHash() => r'120d127827181093c9aad9bb8a1a812a77f65c9c';
 
 /// See also [DistanciaProvider].
 @ProviderFor(DistanciaProvider)
@@ -85,5 +85,22 @@ final valorOutputProvider =
 );
 
 typedef _$ValorOutput = AutoDisposeNotifier<double>;
+String _$distanciaControllerHash() =>
+    r'1084e20d190c1b2e179e43a3755c13c62e0d440d';
+
+/// See also [DistanciaController].
+@ProviderFor(DistanciaController)
+final distanciaControllerProvider = AutoDisposeNotifierProvider<
+    DistanciaController, TextEditingController>.internal(
+  DistanciaController.new,
+  name: r'distanciaControllerProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$distanciaControllerHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$DistanciaController = AutoDisposeNotifier<TextEditingController>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter

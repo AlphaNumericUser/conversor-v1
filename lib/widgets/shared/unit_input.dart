@@ -1,8 +1,8 @@
 import 'package:conversor/Entities/distancia.dart';
 import 'package:conversor/providers/providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:number_text_input_formatter/number_text_input_formatter.dart';
 
 class UnitInput extends ConsumerWidget {
   const UnitInput({
@@ -20,7 +20,7 @@ class UnitInput extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final textController = ref.watch(controllerProviderProvider);
+    final distanciaController = ref.watch(distanciaControllerProvider);
 
     void handleInputChange(String value) {
       if (value.isNotEmpty) {
@@ -65,6 +65,7 @@ class UnitInput extends ConsumerWidget {
                 ),
               ),
             ),
+            
             Expanded(
               child: Container(
                 height: boxHeight,
@@ -73,14 +74,15 @@ class UnitInput extends ConsumerWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(),
                     child: TextField(
-                      onChanged: handleInputChange,
-                      controller: textController,
+                      onChanged: (value) {
+                        // Remueve las comas antes de procesar el número
+                        String cleanedValue = value.replaceAll(',', '');
+                        handleInputChange(cleanedValue);
+                      },
+                      controller: distanciaController,
                       textAlign: TextAlign.right,
                       style: TextStyle(fontSize: fontSize),
-                      keyboardType: TextInputType.number,
-                      inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,4}')),
-                      ],
+                      keyboardType: const TextInputType.numberWithOptions(decimal: true),
                       decoration: const InputDecoration(
                         hintText: 'Push here',
                         hintStyle: TextStyle(fontSize: 20),
@@ -93,6 +95,23 @@ class UnitInput extends ConsumerWidget {
                           borderSide: BorderSide(color: Colors.transparent),
                         ),
                       ),
+
+                      inputFormatters: [
+                        NumberTextInputFormatter(
+                          integerDigits: 10,
+                          decimalDigits: 2,
+                          maxValue: '1000000000.00',
+                          decimalSeparator: '.',
+                          groupDigits: 3,
+                          groupSeparator: ',',
+                          allowNegative: false,
+                          overrideDecimalPoint: false,
+                          insertDecimalPoint: false,
+                          insertDecimalDigits: false,
+                          fixNumber: false
+                        ),
+                      ],
+
                     ),
                   ),
                 ),

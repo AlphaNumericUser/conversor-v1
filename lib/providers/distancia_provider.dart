@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../Entities/distancia.dart';
@@ -10,9 +11,20 @@ class DistanciaProvider extends _$DistanciaProvider {
   List<Distancia> build() {
     return [
       Distancia(nombre: 'm', ratio: 1),
+      Distancia(nombre: 'dm', ratio: 10),
       Distancia(nombre: 'cm', ratio: 100),
       Distancia(nombre: 'mm', ratio: 1000),
+      Distancia(nombre: 'µm', ratio: 1000000),
+      Distancia(nombre: 'nm', ratio: 1000000000),
+      Distancia(nombre: 'Å', ratio: 10000000000),
       Distancia(nombre: 'km', ratio: 0.001),
+      Distancia(nombre: 'Mm', ratio: 0.000001),
+      Distancia(nombre: 'Gm', ratio: 0.000000001),
+      Distancia(nombre: 'Tm', ratio: 0.000000000001),
+      Distancia(nombre: 'yd', ratio: 1.09361),
+      Distancia(nombre: 'in', ratio: 39.3701),
+      Distancia(nombre: 'pie', ratio: 3.28084),
+      Distancia(nombre: 'mi', ratio: 0.000621371),
     ];
   }
 
@@ -83,3 +95,12 @@ class ValorOutput extends _$ValorOutput {
   }
 
 }
+
+@riverpod
+class DistanciaController extends _$DistanciaController {
+  @override
+  TextEditingController build() {
+    return TextEditingController();
+  }
+}
+

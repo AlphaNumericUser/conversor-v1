@@ -23,11 +23,11 @@ class DistanceScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          UnitInput(boxWidth: boxWidth, boxHeight: boxHeight, lista: distancias, fontSize: 80,),
+          UnitInput(boxWidth: boxWidth, boxHeight: boxHeight, lista: distancias, fontSize: 40,),
 
           const CustomDivider(),
 
-          UnitOutput(boxWidth: boxWidth, boxHeight: boxHeight, lista: distancias, fontSize: 80,),
+          UnitOutput(boxWidth: boxWidth, boxHeight: boxHeight, lista: distancias, fontSize: 40,),
 
           const CustomButton(),
         ],
