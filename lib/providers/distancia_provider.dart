@@ -19,8 +19,6 @@ class DistanciaProvider extends _$DistanciaProvider {
       Distancia(nombre: 'Å', ratio: 10000000000),
       Distancia(nombre: 'km', ratio: 0.001),
       Distancia(nombre: 'Mm', ratio: 0.000001),
-      Distancia(nombre: 'Gm', ratio: 0.000000001),
-      Distancia(nombre: 'Tm', ratio: 0.000000000001),
       Distancia(nombre: 'yd', ratio: 1.09361),
       Distancia(nombre: 'in', ratio: 39.3701),
       Distancia(nombre: 'pie', ratio: 3.28084),
