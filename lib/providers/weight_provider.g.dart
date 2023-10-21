@@ -6,7 +6,7 @@ part of 'weight_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$weightProviderHash() => r'921b40966d3c584e66934e04f4b9b23482cd9d1f';
+String _$weightProviderHash() => r'c318c11690e154cc322b88faddd64f1376b62d0e';
 
 /// See also [WeightProvider].
 @ProviderFor(WeightProvider)
