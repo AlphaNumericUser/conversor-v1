@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HeatScreen extends StatelessWidget {
-  const HeatScreen({super.key});
+class TemperatureScreen extends StatelessWidget {
+  const TemperatureScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Heat screen'),
+        child: Text('Temperature screen'),
       ),
     );
   }

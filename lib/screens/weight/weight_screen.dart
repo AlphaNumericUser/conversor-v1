@@ -1,39 +1,39 @@
+import 'package:conversor/providers/weight_provider.dart';
+import 'package:conversor/screens/screens.dart';
+import 'package:conversor/screens/weight/weight_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../providers/distancia_provider.dart';
-import '../widgets/widgets.dart';
+import '../../widgets/widgets.dart';
 
-class DistanceScreen extends ConsumerWidget {
-  const DistanceScreen({super.key});
+class WeightScreen extends ConsumerWidget {
+  const WeightScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final distancias = ref.watch(distanciaProviderProvider);
+    final pesos = ref.watch(weightProviderProvider);
     double screenWidth = MediaQuery.of(context).size.width;
     double boxWidth = screenWidth * 0.9; // Establece el ancho como el 40% del ancho de la pantalla
     double screenHeight = MediaQuery.of(context).size.height;
     double boxHeight = screenHeight * 0.15; // Establece el ancho como el 40% del ancho de la pantalla
 
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Distance'),
+        title: const Text('Weight'),
       ),
       body: Column(
         children: [
-          UnitInput(boxWidth: boxWidth, boxHeight: boxHeight, lista: distancias, fontSize: 40,),
+          WeightUnitInput(boxWidth: boxWidth, boxHeight: boxHeight, lista: pesos, fontSize: 40),
 
           const CustomDivider(),
 
-          UnitOutput(boxWidth: boxWidth, boxHeight: boxHeight, lista: distancias, fontSize: 40,),
+          WeightUnitOutput(boxWidth: boxWidth, boxHeight: boxHeight, lista: pesos, fontSize: 40),
 
-          const CustomButton(),
+          const WeightCustomButton()
         ],
       )
     );
+
   }
 }
-
-

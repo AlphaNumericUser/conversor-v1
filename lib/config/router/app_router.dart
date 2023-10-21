@@ -21,8 +21,8 @@ final router = GoRouter(
     ),
 
     GoRoute(
-      path: '/heat',
-      builder: (context, state) => const HeatScreen(),
+      path: '/temperature',
+      builder: (context, state) => const TemperatureScreen(),
     ),
 
     GoRoute(

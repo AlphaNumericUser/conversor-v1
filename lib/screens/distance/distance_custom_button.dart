@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../Entities/distancia.dart';
 import '../../providers/distancia_provider.dart';
 
-class CustomButton extends ConsumerWidget {
+class DistanceCustomButton extends ConsumerWidget {
   
-  const CustomButton({ 
+  const DistanceCustomButton({ 
     super.key
   });
 

@@ -12,7 +12,7 @@ class MenuItem{
 final menuItems = <MenuItem>[
   MenuItem(title: 'Distance', icon: Icons.public_sharp, route: '/distance'),
   MenuItem(title: 'Weight', icon: Icons.accessibility, route: '/weight'),
-  MenuItem(title: 'Heat', icon: Icons.fireplace_outlined, route: '/heat'),
+  MenuItem(title: 'Temperature', icon: Icons.fireplace_outlined, route: '/temperature'),
   MenuItem(title: 'Time', icon: Icons.access_time_filled, route: '/time'),
   MenuItem(title: 'Example', icon: Icons.account_tree, route: '/example'),
   MenuItem(title: 'Example2', icon: Icons.account_tree, route: '/example2'),
