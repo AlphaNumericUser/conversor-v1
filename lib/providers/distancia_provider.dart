@@ -67,7 +67,7 @@ class DistanciaSalida extends _$DistanciaSalida {
 }
 
 @riverpod
-class ValorNumerico extends _$ValorNumerico {
+class DistanciaValorNumerico extends _$DistanciaValorNumerico {
 
   @override
   double build() {
@@ -81,8 +81,8 @@ class ValorNumerico extends _$ValorNumerico {
 }
 
 @riverpod
-class ValorOutput extends _$ValorOutput {
-  
+class DistanciaValorOutput extends _$DistanciaValorOutput {
+
   @override
   double build() {
     return 0;

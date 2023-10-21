@@ -15,14 +15,14 @@ class CustomButton extends ConsumerWidget {
 
     Distancia? distanciaEntrada = ref.watch(distanciaEntradaProvider);
     Distancia? distanciaSalida = ref.watch(distanciaSalidaProvider);
-    double valorNumerico = ref.watch(valorNumericoProvider);
+    double valorNumerico = ref.watch(distanciaValorNumericoProvider);
     double conversion = 0;
 
 
     return FloatingActionButton.extended(
       onPressed: () {
         conversion = ref.read(distanciaProviderProvider.notifier).convertir(valorNumerico, distanciaEntrada!, distanciaSalida!);
-        ref.read(valorOutputProvider.notifier).cambiarValor(conversion);
+        ref.read(distanciaValorOutputProvider.notifier).cambiarValor(conversion);
       },
       label: const Text('Convertir')
     );

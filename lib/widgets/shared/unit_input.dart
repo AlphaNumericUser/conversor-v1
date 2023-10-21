@@ -26,7 +26,7 @@ class UnitInput extends ConsumerWidget {
       if (value.isNotEmpty) {
         try {
           double valorNumerico = double.parse(value);
-          ref.read(valorNumericoProvider.notifier).cambiarValor(valorNumerico);
+          ref.read(distanciaValorNumericoProvider.notifier).cambiarValor(valorNumerico);
         // ignore: empty_catches
         } catch (e) {
         }

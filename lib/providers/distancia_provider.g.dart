@@ -6,7 +6,7 @@ part of 'distancia_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$distanciaProviderHash() => r'120d127827181093c9aad9bb8a1a812a77f65c9c';
+String _$distanciaProviderHash() => r'0ab68eb3520a37f222f7336a1d77a9f55120a081';
 
 /// See also [DistanciaProvider].
 @ProviderFor(DistanciaProvider)
@@ -54,37 +54,40 @@ final distanciaSalidaProvider =
 );
 
 typedef _$DistanciaSalida = AutoDisposeNotifier<Distancia>;
-String _$valorNumericoHash() => r'59e28683f0d9cf16da9b7b9e255e362ab899e219';
+String _$distanciaValorNumericoHash() =>
+    r'da75af6dd7e54adf33aad8a868b8e424097762b8';
 
-/// See also [ValorNumerico].
-@ProviderFor(ValorNumerico)
-final valorNumericoProvider =
-    AutoDisposeNotifierProvider<ValorNumerico, double>.internal(
-  ValorNumerico.new,
-  name: r'valorNumericoProvider',
+/// See also [DistanciaValorNumerico].
+@ProviderFor(DistanciaValorNumerico)
+final distanciaValorNumericoProvider =
+    AutoDisposeNotifierProvider<DistanciaValorNumerico, double>.internal(
+  DistanciaValorNumerico.new,
+  name: r'distanciaValorNumericoProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$valorNumericoHash,
+      : _$distanciaValorNumericoHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ValorNumerico = AutoDisposeNotifier<double>;
-String _$valorOutputHash() => r'ce7d52034f44de933c6054352a082428aa0599a1';
+typedef _$DistanciaValorNumerico = AutoDisposeNotifier<double>;
+String _$distanciaValorOutputHash() =>
+    r'6c1dd0bb9af85512375d6985b68bef34233c341c';
 
-/// See also [ValorOutput].
-@ProviderFor(ValorOutput)
-final valorOutputProvider =
-    AutoDisposeNotifierProvider<ValorOutput, double>.internal(
-  ValorOutput.new,
-  name: r'valorOutputProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$valorOutputHash,
+/// See also [DistanciaValorOutput].
+@ProviderFor(DistanciaValorOutput)
+final distanciaValorOutputProvider =
+    AutoDisposeNotifierProvider<DistanciaValorOutput, double>.internal(
+  DistanciaValorOutput.new,
+  name: r'distanciaValorOutputProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$distanciaValorOutputHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ValorOutput = AutoDisposeNotifier<double>;
+typedef _$DistanciaValorOutput = AutoDisposeNotifier<double>;
 String _$distanciaControllerHash() =>
     r'1084e20d190c1b2e179e43a3755c13c62e0d440d';
 

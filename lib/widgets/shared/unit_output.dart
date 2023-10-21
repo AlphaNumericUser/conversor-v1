@@ -20,7 +20,7 @@ class UnitOutput extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final valorOutput = ref.watch(valorOutputProvider);
+    final valorOutput = ref.watch(distanciaValorOutputProvider);
 
     String formattedValue;
 
