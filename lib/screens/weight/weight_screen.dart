@@ -1,6 +1,5 @@
 import 'package:conversor/providers/weight_provider.dart';
 import 'package:conversor/screens/screens.dart';
-import 'package:conversor/screens/weight/weight_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -2,7 +2,6 @@ import 'package:conversor/Entities/temperature.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../Entities/distancia.dart';
 
 part 'temperature_provider.g.dart';
 

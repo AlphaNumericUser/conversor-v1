@@ -35,8 +35,6 @@ class WeightUnitInput extends ConsumerWidget {
       }
     }
 
-    print('valorNumerico: ${ref.watch(pesoValorNumericoProvider)}');
-    print('pesocontroller: ${pesoController.text}');
 
     return Center(
       child: SizedBox(
