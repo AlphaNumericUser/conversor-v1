@@ -14,6 +14,10 @@ final menuItems = <MenuItem>[
   MenuItem(title: 'Weight', icon: Icons.accessibility, route: '/weight'),
   MenuItem(title: 'Temperature', icon: Icons.fireplace_outlined, route: '/temperature'),
   MenuItem(title: 'Time', icon: Icons.access_time_filled, route: '/time'),
+  MenuItem(title: 'Data', icon: Icons.cable_rounded, route: '/time'),
+  MenuItem(title: 'Energy', icon: Icons.bolt, route: '/time'),
+  MenuItem(title: 'Volumen', icon: Icons.swap_vertical_circle, route: '/time'),
+  MenuItem(title: 'Area', icon: Icons.area_chart_sharp, route: '/time'),
   MenuItem(title: 'Example', icon: Icons.account_tree, route: '/example'),
   MenuItem(title: 'Example2', icon: Icons.account_tree, route: '/example2'),
 ];

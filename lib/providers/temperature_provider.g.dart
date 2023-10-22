@@ -7,7 +7,7 @@ part of 'temperature_provider.dart';
 // **************************************************************************
 
 String _$temperaturaProviderHash() =>
-    r'4b47771b094ad9c20e46cdcb12ef75199b6f889c';
+    r'42b7a07b30f695b96fafa9f90324524384c1f311';
 
 /// See also [TemperaturaProvider].
 @ProviderFor(TemperaturaProvider)

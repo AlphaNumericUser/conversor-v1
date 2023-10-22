@@ -6,7 +6,7 @@ part of 'distancia_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$distanciaProviderHash() => r'0ab68eb3520a37f222f7336a1d77a9f55120a081';
+String _$distanciaProviderHash() => r'bb4d4d8c2dff0fbe2e2ee810d0b1323775c662b9';
 
 /// See also [DistanciaProvider].
 @ProviderFor(DistanciaProvider)
