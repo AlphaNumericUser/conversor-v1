@@ -6,17 +6,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: CustomScrollView(
           slivers: [
 
             SliverAppBar(
-              title: Text('Converter'),
+              title: const Text('Unit Converter'),
+              backgroundColor: Colors.grey[200],
             ),
 
-            MainMenu(),
+            const MainMenu(),
           ],
         ),
       )

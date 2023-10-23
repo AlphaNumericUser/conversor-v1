@@ -22,7 +22,7 @@ class TemperatureScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Temperature'),
+        title: const Text('Temperature Screen'),
       ),
       body: Column(
         children: [

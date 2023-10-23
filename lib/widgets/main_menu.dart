@@ -3,23 +3,28 @@ import 'package:go_router/go_router.dart';
 
 class MenuItem{
   final String title;
-  final IconData icon;
   final String route;
+  final String assetImage;
 
-  MenuItem({required this.title, required this.icon, required this.route});
+  MenuItem({required this.title, required this.route, required this.assetImage});
 }
 
 final menuItems = <MenuItem>[
-  MenuItem(title: 'Distance', icon: Icons.public_sharp, route: '/distance'),
-  MenuItem(title: 'Weight', icon: Icons.accessibility, route: '/weight'),
-  MenuItem(title: 'Temperature', icon: Icons.fireplace_outlined, route: '/temperature'),
-  MenuItem(title: 'Time', icon: Icons.access_time_filled, route: '/time'),
-  MenuItem(title: 'Data', icon: Icons.cable_rounded, route: '/time'),
-  MenuItem(title: 'Energy', icon: Icons.bolt, route: '/time'),
-  MenuItem(title: 'Volumen', icon: Icons.swap_vertical_circle, route: '/time'),
-  MenuItem(title: 'Area', icon: Icons.area_chart_sharp, route: '/time'),
-  MenuItem(title: 'Example', icon: Icons.account_tree, route: '/example'),
-  MenuItem(title: 'Example2', icon: Icons.account_tree, route: '/example2'),
+  MenuItem(title: 'Distance', assetImage: 'assets/distancia.png', route: '/distance'),
+  MenuItem(title: 'Weight', assetImage: 'assets/peso.png', route: '/weight'),
+  MenuItem(title: 'Temperature', assetImage: 'assets/temperatura.png', route: '/temperature'),
+
+  MenuItem(title: 'Time', assetImage: 'assets/tiempo.png', route: '/time'),
+  MenuItem(title: 'Digital Storage', assetImage: 'assets/database.png', route: '/storage'),
+  MenuItem(title: 'Energy', assetImage: 'assets/energy.png', route: '/time'),
+
+  MenuItem(title: 'Volume', assetImage: 'assets/volumen.png', route: '/time'),
+  MenuItem(title: 'Area', assetImage: 'assets/area.png', route: '/time'),
+  MenuItem(title: 'Force', assetImage: 'assets/fuerza.png', route: '/time'),
+
+  MenuItem(title: 'Pressure', assetImage: 'assets/presion.png', route: '/time'),
+  MenuItem(title: 'Angle', assetImage: 'assets/angulo.png', route: '/time'),
+  MenuItem(title: 'Power', assetImage: 'assets/poder.png', route: '/time'),
 ];
 
 class MainMenu extends StatelessWidget {
@@ -28,13 +33,13 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverGrid.count(
-      crossAxisCount: 2,
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
+      crossAxisCount: 3,
+      crossAxisSpacing: 5,
+      mainAxisSpacing: 5,
       children: menuItems.map((item) => HomeMenuItem(
         title: item.title, 
-        icon: item.icon, 
-        route: item.route
+        route: item.route, 
+        assetImage: item.assetImage,
       )).toList()
     );
   }
@@ -43,41 +48,51 @@ class MainMenu extends StatelessWidget {
 class HomeMenuItem extends StatelessWidget {
 
   final String title;
-  final IconData icon;
+  final String assetImage;
   final String route;
   final List<Color> bgColors;
 
   const HomeMenuItem({
     super.key, 
     required this.title, 
-    required this.icon, 
+    required this.assetImage,
     required this.route, 
-    this.bgColors = const [ Colors.orange, Colors.deepOrange]
+    this.bgColors = const [ Colors.white, Colors.white], 
+    
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => context.push( route ),
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
+      child: Card(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(
-            colors: bgColors,
-            begin: Alignment.topCenter,
-            // begin: Alignment.topCenter,
-            end: Alignment.bottomCenter
-            // end: Alignment.bottomCenter
-          ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon( icon, color: Colors.white, size: 40, ),
-            const SizedBox(height: 10),
-            Text(title, style: const TextStyle(color: Colors.white, fontSize: 18),)
-          ],
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            gradient: LinearGradient(
+              colors: bgColors,
+              begin: Alignment.topCenter,
+              // begin: Alignment.topCenter,
+              end: Alignment.bottomCenter
+              // end: Alignment.bottomCenter
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 32,
+                child: Image.asset(assetImage),
+              ),
+              const SizedBox(height: 10),
+              Text(title, style: const TextStyle(color: Colors.black, fontSize: 14)),
+            ],
+          ),
         ),
       ),
     );

@@ -31,13 +31,8 @@ final router = GoRouter(
     ),
 
     GoRoute(
-      path: '/example',
-      builder: (context, state) => const ExampleScreen(),
-    ),
-
-    GoRoute(
-      path: '/example2',
-      builder: (context, state) => const ExampleScreen2(),
+      path: '/storage',
+      builder: (context, state) => const StorageScreen(),
     ),
 
   ]

@@ -16,6 +16,7 @@ export 'weight/weight_custom_button.dart';
 export 'temperature/temperature_screen.dart';
 export 'temperature/temperature_custom_button.dart';
 
+export 'storage/storage_screen.dart';
 export 'time/time_screen.dart';
 export 'examples/example_screen.dart';
 export 'examples/example2.dart';

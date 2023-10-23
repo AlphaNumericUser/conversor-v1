@@ -19,7 +19,7 @@ class WeightScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Weight'),
+        title: const Text('Weight Screen'),
       ),
       body: Column(
         children: [

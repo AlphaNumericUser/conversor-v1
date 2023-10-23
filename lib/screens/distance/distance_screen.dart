@@ -20,7 +20,7 @@ class DistanceScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Distance'),
+        title: const Text('Distance Screen'),
       ),
       body: Column(
         children: [
