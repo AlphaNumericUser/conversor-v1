@@ -16,7 +16,7 @@ final menuItems = <MenuItem>[
 
   MenuItem(title: 'Time', assetImage: 'assets/tiempo.png', route: '/time'),
   MenuItem(title: 'Digital Storage', assetImage: 'assets/database.png', route: '/storage'),
-  MenuItem(title: 'Energy', assetImage: 'assets/energy.png', route: '/time'),
+  MenuItem(title: 'Energy', assetImage: 'assets/energy.png', route: '/energy'),
 
   MenuItem(title: 'Volume', assetImage: 'assets/volumen.png', route: '/time'),
   MenuItem(title: 'Area', assetImage: 'assets/area.png', route: '/time'),
