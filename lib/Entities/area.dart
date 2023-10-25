@@ -1,11 +1,11 @@
 
-class Distancia {
+class Area {
   
   String nombre;
   double ratio; 
 
-  Distancia({
-    this.nombre = 'm',
+  Area({
+    this.nombre = 'm2',
     this.ratio = 1,
   });
 

@@ -1,3 +1,4 @@
+import 'package:conversor/screens/area/area_screen.dart';
 import 'package:conversor/screens/energia/energia_screen.dart';
 import 'package:conversor/screens/volumen/volumen_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -45,6 +46,11 @@ final router = GoRouter(
     GoRoute(
       path: '/volumen',
       builder: (context, state) => const VolumenScreen(),
+    ),
+
+    GoRoute(
+      path: '/area',
+      builder: (context, state) => const AreaScreen(),
     ),
 
   ]
