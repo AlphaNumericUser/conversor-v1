@@ -1,6 +1,7 @@
 import 'package:conversor/screens/area/area_screen.dart';
 import 'package:conversor/screens/energia/energia_screen.dart';
 import 'package:conversor/screens/fuerza/fuerza_screen.dart';
+import 'package:conversor/screens/presion/presion_screen.dart';
 import 'package:conversor/screens/volumen/volumen_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -57,6 +58,11 @@ final router = GoRouter(
     GoRoute(
       path: '/fuerza',
       builder: (context, state) => const FuerzaScreen(),
+    ),
+
+    GoRoute(
+      path: '/presion',
+      builder: (context, state) => const PresionScreen(),
     ),
 
   ]
