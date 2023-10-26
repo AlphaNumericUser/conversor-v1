@@ -20,7 +20,7 @@ final menuItems = <MenuItem>[
 
   MenuItem(title: 'Volume', assetImage: 'assets/volumen.png', route: '/volumen'),
   MenuItem(title: 'Area', assetImage: 'assets/area.png', route: '/area'),
-  MenuItem(title: 'Force', assetImage: 'assets/fuerza.png', route: '/time'),
+  MenuItem(title: 'Force', assetImage: 'assets/fuerza.png', route: '/fuerza'),
 
   MenuItem(title: 'Pressure', assetImage: 'assets/presion.png', route: '/time'),
   MenuItem(title: 'Angle', assetImage: 'assets/angulo.png', route: '/time'),
