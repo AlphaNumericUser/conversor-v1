@@ -1,3 +1,4 @@
+import 'package:conversor/screens/angulo/angulo_screen.dart';
 import 'package:conversor/screens/area/area_screen.dart';
 import 'package:conversor/screens/energia/energia_screen.dart';
 import 'package:conversor/screens/fuerza/fuerza_screen.dart';
@@ -63,6 +64,11 @@ final router = GoRouter(
     GoRoute(
       path: '/presion',
       builder: (context, state) => const PresionScreen(),
+    ),
+
+    GoRoute(
+      path: '/angulo',
+      builder: (context, state) => const AnguloScreen(),
     ),
 
   ]
