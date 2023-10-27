@@ -24,7 +24,7 @@ final menuItems = <MenuItem>[
 
   MenuItem(title: 'Pressure', assetImage: 'assets/presion.png', route: '/presion'),
   MenuItem(title: 'Angle', assetImage: 'assets/angulo.png', route: '/angulo'),
-  MenuItem(title: 'Power', assetImage: 'assets/poder.png', route: '/time'),
+  MenuItem(title: 'Power', assetImage: 'assets/poder.png', route: '/poder'),
 ];
 
 class MainMenu extends StatelessWidget {

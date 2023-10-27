@@ -13,7 +13,6 @@ class AnguloProvider extends _$AnguloProvider {
       Angulo(nombre: 'rad', ratio: 0.0174533),
       Angulo(nombre: "min", ratio: 60),
       Angulo(nombre: 'seg', ratio: 3600),
-      Angulo(nombre: 'círculo', ratio: 0.00277778),
     ];
   }
 
