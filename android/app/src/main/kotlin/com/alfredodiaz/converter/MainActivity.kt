@@ -1,4 +1,4 @@
-package com.example.conversor
+package com.alfredodiaz.converter
 
 import io.flutter.embedding.android.FlutterActivity
 

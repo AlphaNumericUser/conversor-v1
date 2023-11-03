@@ -1,11 +1,17 @@
 import 'package:conversor/config/router/app_router.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  // Establece la orientación vertical
-  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  // Bloquea la orientacion de la aplicacion
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp, // Solo orientación vertical hacia arriba
+    DeviceOrientation.portraitDown, // Solo orientación vertical hacia abajo
+  ]);
   
   runApp(
     const ProviderScope(child: MainApp())

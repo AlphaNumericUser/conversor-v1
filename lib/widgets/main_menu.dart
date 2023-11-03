@@ -11,20 +11,20 @@ class MenuItem{
 
 final menuItems = <MenuItem>[
   MenuItem(title: 'Distance', assetImage: 'assets/distancia.png', route: '/distance'),
-  MenuItem(title: 'Weight', assetImage: 'assets/peso.png', route: '/weight'),
-  MenuItem(title: 'Temperature', assetImage: 'assets/temperatura.png', route: '/temperature'),
-
-  MenuItem(title: 'Time', assetImage: 'assets/tiempo.png', route: '/time'),
-  MenuItem(title: 'Digital Storage', assetImage: 'assets/database.png', route: '/storage'),
-  MenuItem(title: 'Energy', assetImage: 'assets/energy.png', route: '/energy'),
-
-  MenuItem(title: 'Volume', assetImage: 'assets/volumen.png', route: '/volumen'),
   MenuItem(title: 'Area', assetImage: 'assets/area.png', route: '/area'),
-  MenuItem(title: 'Force', assetImage: 'assets/fuerza.png', route: '/fuerza'),
+  MenuItem(title: 'Volume', assetImage: 'assets/volumen.png', route: '/volumen'),
 
+  MenuItem(title: 'Weight', assetImage: 'assets/peso.png', route: '/weight'),
+  MenuItem(title: 'Force', assetImage: 'assets/fuerza.png', route: '/fuerza'),
   MenuItem(title: 'Pressure', assetImage: 'assets/presion.png', route: '/presion'),
-  MenuItem(title: 'Angle', assetImage: 'assets/angulo.png', route: '/angulo'),
+
+  MenuItem(title: 'Temperature', assetImage: 'assets/temperatura.png', route: '/temperature'),
+  MenuItem(title: 'Energy', assetImage: 'assets/energy.png', route: '/energy'),
   MenuItem(title: 'Power', assetImage: 'assets/poder.png', route: '/poder'),
+
+  MenuItem(title: 'Angle', assetImage: 'assets/angulo.png', route: '/angulo'),
+  MenuItem(title: 'Digital Storage', assetImage: 'assets/database.png', route: '/storage'),
+  MenuItem(title: 'Time', assetImage: 'assets/tiempo.png', route: '/time'),
 ];
 
 class MainMenu extends StatelessWidget {
